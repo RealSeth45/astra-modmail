@@ -10,8 +10,8 @@ intents.dm_messages = True
 bot = commands.Bot(command_prefix=".", intents=intents)
 
 # Load from Railway environment variables
-STAFF_CATEGORY_ID = int(os.getenv("1467217763457306708"))
-LOG_CHANNEL_ID = int(os.getenv("1465386626942369865"))
+STAFF_CATEGORY_ID = int(os.getenv("STAFF_CATEGORY_ID"))
+LOG_CHANNEL_ID = int(os.getenv("LOG_CHANNEL_ID"))
 
 open_tickets = {}       # user_id : channel_id
 claimed_tickets = {}    # channel_id : staff_id

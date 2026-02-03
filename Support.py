@@ -10,8 +10,8 @@ intents.dm_messages = True
 bot = commands.Bot(command_prefix=".", intents=intents)
 
 # Load from Railway environment variables
-STAFF_CATEGORY_ID = int(os.getenv("1467217763457306708"))
-LOG_CHANNEL_ID = int(os.getenv("1465386626942369865"))
+STAFF_CATEGORY_ID = int(os.getenv("STAFF_CATEGORY_ID"))
+LOG_CHANNEL_ID = int(os.getenv("LOG_CHANNEL_ID"))
 
 open_tickets = {}       # user_id : channel_id
 claimed_tickets = {}    # channel_id : staff_id
@@ -327,9 +327,10 @@ async def on_guild_channel_delete(channel):
 # ---------------------------------------------------
 # RUN BOT
 # ---------------------------------------------------
-TOKEN = os.getenv("MTQ2NzIxNTYxMjg1NzI4Njc5MQ.Ghm-yj.nj5UMg25LyR9s-FyavoC4axeK0h5BpleZtGdKA")
+TOKEN = os.getenv("BOT_TOKEN")
 if not TOKEN:
     raise RuntimeError("BOT_TOKEN not set in Railway environment variables.")
 
 bot.run(TOKEN)
+
 
